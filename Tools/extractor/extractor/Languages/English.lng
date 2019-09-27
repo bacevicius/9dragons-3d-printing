@@ -1,0 +1,503 @@
+;
+;  English
+;  version 2.4
+;
+;  translated by Vaclav Novacek and Eva Kulichova
+;  corrected by Chris Moates
+;
+
+[Language]
+
+; Locale informations
+Description="English"
+LocaleDescription="English"
+LocaleId=??09
+HelpFile="English.chm"
+
+
+; Generic strings
+00001="Information"
+00002="Warning"
+00003="Error"
+00004="Confirmation"
+
+00011="OK"
+00012="&Yes"
+00013="&No"
+00014="Cancel"
+00015="&Retry"
+00016="&Ignore"
+00017="&Help"
+00018="Y&es to all"
+00019="N&o to all"
+
+00101="B"
+00102="kB"
+00103="MB"
+00111="%"
+
+00201="All files (*.*)|*.*"
+
+00301="Support for HTML help not installed."
+00302="Help file not found."
+
+00401="Plugin %s isn't compatible with this program version.\nProgram API version: %s\nPlugin API version: %s"
+
+
+; Main window
+01001="&Files to scan:"
+01002="These files will be searched for the selected file types"
+01003="S&elect"
+01004="Select files"
+01005="Scanning results (*.esr;*.csv;*.apl)|*.esr;*.csv;*.apl"
+01006="&Add files to list"
+
+01011="Sa&ve extracted files to:"
+01012="Extracted files will be saved to this directory"
+01013="Select directory for temporary files (TEMP)"
+01014="Se&lect"
+01015="Select directory"
+01016="Selected directory:"
+01017="New directory"
+
+01021="Formats"
+01022="Groupfiles"
+01023="Selected f&ormats: %d/%d"
+01024="Selected &groupfiles: %d/%d"
+01025="Type"
+01026="Description"
+01027="&Inv"
+01031="Load"
+01032="Load formats selection"
+01033="&Add formats selection"
+01034="Load groupfiles selection"
+01035="&Add groupfiles selection"
+01036="Save"
+01037="Save formats selection"
+01038="Save groupfiles selection"
+01041="Formats (*.fmt)|*.fmt"
+01042="Groupfiles (*.gfl)|*.gfl"
+01045="About"
+01046="Config"
+
+01051="Options"
+
+01061="%s"
+01062="&Language:"
+01063="Change language of user interface"
+01064="Add Start &Menu item"
+01065="Add Desktop &icon"
+01066="Add &QuickLaunch icon"
+01068="Proxy s&erver ("Host:Port"):"
+01069="Proxy server for connecting to the Internet. Leave blank for no proxy server."
+01071="Check for &new version"
+01072="Availablity of new version of %s will be detected after connecting to the Internet"
+01073="Inte&grate to system"
+01074="Integrate program to system and include context menu item"
+
+01081="Names"
+01082="File &name format:"
+01083="Names of founded files will be composed in accordance with this definition. File name\nsigns symbol %f%, number symbol %n%. This definition can be modified."
+01084="Use source file as &base filename"
+01085="Names of founded files will be created from name of source file"
+01086="&Local numbering"
+01087="Names of founded files will be numbered for every source file differently"
+01088="No numbering if &one file is founded"
+01089="If only one file is founded in source file, then it's name will not contain a number"
+01090="File names numbering system"
+01091="deci&mal\n&hexadecimal"
+01092="Names of found files will be marked with number in chosen number system (it's not valid for groupfiles)"
+01093="Convert &underscores to spaces"
+01094="Converts all underscores in filenames to spaces (not valid for groupfiles and scanning results)"
+01097="&Variable CD-R drive labelling"
+01098="For save scanning results will be used variable assignment of CD-R drive"
+01099="&CD-R Drive:"
+01100="While loading scanning results will be used as CD-R drive selected drive"
+01101="Auto"
+
+01121="Position"
+01122="Scanning start &position:"
+01123="Selected files will be scanned from this position with following definition (file begin=0)" 
+01124="Unit of scanning start position"
+01125="Allowed for"
+01126="all f&iles\nfirs&t file"
+01127="Determines validity of scanning start position"
+
+01131="Viewer"
+01132="Default show type"
+01133="A&uto\n&Text\n&Binary\n&Hexa"
+01134="Define default file show form"
+01135="Show images as &graphics"
+01136="Images will be shown as graphics"
+01137="Play &multimedia"
+01138="Multimedia files will be played as sound or video"
+01139="Use IrfanVie&w or XnView"
+01140="External program to use"
+01141="F&ile:"
+01142="Filename of external program"
+01143="Sele&ct"
+01144="Select file"
+01145="IrfanView (i_view32.exe)|i_view32.exe|XnView (xnview.exe)|xnview.exe"
+
+01151="Cache"
+01152="Si&ze:"
+01153="Changes cache size for files scanning"
+01154="Cache size for scanning (recommended %d kB)"
+01156="A&utomatic size"
+01157="Cache size will be chosen automatically. Program contains dynamic cache\noptimization. This optiomization can make file scanning faster."
+01158="Delete &temporary files:"
+01159="Set condition for deleting temporary files"
+01160="never\nafter closing scanning window\nwith program exit\nwith program start"
+01161="Use &existing files"
+01162="While files oppening or viewing will be used the same allready existing files"
+
+01171="Display"
+01172="Display percentage status"
+01173="Percentage status of scanning will be displayed by progress indicator"
+01174="Show file &icons"
+01175="Show icons of founded files types"
+01176="Colored items &background"
+01177="Items background will be colored with according to operation (opening, extracting)"
+01178="&Automatic column width"
+01179="Width of names column of founded files will be choosed automatically in according to file names lenght"
+01180="Show &window by fast start"
+01181="It means, if main window should be displayed by program starting with parameter,\nwhich denotes name of scanning file or drag & drop mouse operation."
+
+01191="Preferences"
+01192="Fast sca&nning"
+01193="While fast scanning is next file scaned behind end of previous founded file"
+01194="&Overlay:"
+01195="It means about how many bytes back in source file starts next file scanning (recommended %d B)"
+01196="Confirm ex&traction"
+01197="Dialog for directory confirm will be displayed before extracting"
+01198="Confirm scanning &abortion"
+01199="Displays confirmation dialog before scanning abortion"
+01202="I&gnore errors by reading"
+01203="Make possible to ignore error and continue in file scanning"
+01204="Pro&cess priority:"
+01205="Adjust the priority class to scanning process"
+01206="Low,Normal,High,Realtime"
+
+01301="&Start"
+01302="&Quit"
+01303="&Help"
+01304="&About"
+
+01401="Load scanning results"
+01411="Unknown"
+01412="Scanning results of %s"
+
+01511="File names definition must contains symbols %s and %s."
+01512="Invalid scanning start position."
+01513="Invalid size of file scanning overlay.\nValue must be in %d-%d."
+01514="Directory for file saving can't be created. Continue?"
+01521="Error while saving list of selected formats."
+01522="Error while saving list of selected groupfiles."
+01541="Folowing files doesn't exist or can't be scanned.\nContinue with other files scanning?"
+
+01601="New version of %s"
+01602="On Internet was founded newer version (%s) of %s.\nYou get new functions and other improvements of program when you download new version."
+01603="&Download new version"
+01604="&Continue"
+
+
+; Scanning window
+02001="Scanning"
+02002="File:"
+02003="Type:"
+02004="Founded &files:"
+02011="Done"
+02012="Aborted"
+02013="Error"
+02021="Name"
+02022="Type"
+02023="Position"
+02024="Size"
+02025="Comment"
+
+02101="No file focused.\nChoice do you make by file item selection."
+02102="No files selected.\nChoice do you make by files items selection. Area choice by mouse dragging,\nsingle file selection by holding Ctrl key and by pressing left mouse button."
+02103="No files marked.\nMarking do you make by item checking or by pressing + - and Inv buttons."
+
+02201="&Find"
+02203="Find &next"
+02205="&Show"
+02207="&Time format"
+02209="&Import file"
+02211="Create &groupfile"
+02213="&Add item"
+02214="Add fi&les..."
+02215="&Delete items"
+02216="R&ename"
+02217="Items &view style"
+02218="&Detail"
+02219="&List"
+02221="S&ort items by"
+02222="&Name"
+02223="&Type"
+02224="&Position"
+02225="&Size"
+02226="&Comment"
+02228="&Upward"
+02229="&Downward"
+02231="&Report"
+02233="Save scanning &results"
+
+02251="&Open"
+02252="&Show"
+02253="&Properties"
+02254="&Extract"
+
+02271="Confirm delete"
+02272="Delete %d selected file items?"
+02273="Delete item of file %s?
+
+02311="&Inv"
+02312="Fu&nctions"
+02324="Stop"
+02325="Close"
+
+02401="Opening file..."
+02402="Extracting file..."
+02403="Creating groupfile..."
+02404="Importing file..."
+02405="Searching..."
+02406="Saving scanning results..."
+02407="Merging files..."
+
+02421="File import"
+02422="Add files"
+02423="Create groupfile"
+02424="Merge files"
+02425="Save scanning results"
+02426="Scanning results (*.esr)|*.esr|Scanning results in format CSV (*.csv)|*.csv|ANX Playlist (*.apl)|*.apl"
+02427="Save file items marking and &selection"
+02431="As &link to selected file only"
+
+02501="This is a shareware version limited to searching for %d files.\nRegister, please.\nInformation about registration you found in help."
+
+02511="Source files is a groupfile in format %s, witch isn't allowed.\nIf you want make scanning faster and get right file names, allow it on groupfiles list."
+02512="Error while reading groupfile."
+02515="Error while creating groupfile."
+02516="File name %s is shorter then allowed format length. Name will be cut to maximal possible lenght."
+02517="Destination file already exists.\nContinue with writing files on end of destination file?\nIf you choose No, file will be overwrited."
+
+02521="Error while opening scanned file."
+02522="Error while reading beginning of scanning file. Can't diagnose, whether is a groupfile."
+02523="Error while reading scanned file."
+02524="File %s not found."
+
+02531="Confirm file overwriting"
+02532="File %s already exist.\nDo you want to overwrite it?"
+02533="Error while reading source file."
+02534="Error while writing extracting file."
+
+02541="Source file isn't available."
+02543="Source file isn't available, can't extract file."
+02544="Source file isn't available, can't show file."
+02545="Source file isn't available, can't open file."
+02546="Continue to next file?"
+02547="Error (%d) while opening file."
+02548="Error while opening file."
+
+02551="Error while creating destination file."
+02552="Error while reading source file."
+02553="Error while writing destination file."
+
+02561="Error while creating scan results file."
+02562="Error while writing scan results file."
+02563="Error while reading scan results file."
+02564="File containing scan results from newer program version, file format isn't compatible with this version. If this appears while opening scanning results, it's necessary to use a newer program version."
+
+02571="Error while reading imported file."
+02572="Error while writing imported file."
+02575="This function changes content of source file.\nBefore start import you create backup copy of source file.\nContinue with file import?"
+02576="Imported file is about %s B larger then original file.\nImport to size of original file?\nIf you choose No, file will be imported whole and data behind file will be overwrited."
+02577="Imported file is about %s B shorter then original file.\nKeep remaining part of file without change?\nIf you choose No, remaining part of original file will be filled to zero value."
+
+02581="Format %s is associated to nonexistent program."
+02582="Format %s isn't associated to any program."
+
+02591="Abort scanning?" 
+
+
+; Report
+03001="Report"
+03002="Informations about files"
+03003="Source files, into witch wasn't founded any file:"
+03011="Informations about formats"
+03012="False alarms count:"
+03013="Note: Scanning can be accelerate by disabling formats\nsearching with high false alarms count."
+03021="Errors"
+03022="Count of errors while scanning files:"
+03031="Time"
+03032="Total scanning time:"
+03033="Longest format detect time:"
+03034="Start scanning time:"
+03035="Stop scanning time: "
+03036="Busy scanning time: " 
+03101="&Save to file..."
+03102="Save report"
+03103="Text files (*.txt)|*.txt"
+
+
+; File properties
+04001="%s - properties"
+04002="&Source file:"
+04004="S&elect"
+04006="Select source file"
+04015="File &name:"
+04021="&Type:"
+04025="Association &description:"
+04031="&Asociation:"
+04035="&Position in source file:"
+04037="&Max."
+04038="Maximal position in respect of file size in source file"
+04041="File s&ize:"
+04043="Ma&x."
+04044="Maximal size in respect of file position in source file"
+04045="&Comment:"
+04051="Si&ze of %d selected files:"
+
+04101="Invalid source file name."
+04103="Invalid file name."
+04107="Invalid file position."
+04109="Invalid file size."
+04111="File position will be found behind of source file.\nSet file position to maximal possible position in respect of file size?"
+04113="File size is too large. Part of file will be found behind of source file.\nAlign file size on bound of source file end?"
+04115="Source file not found, can't verify entries.\nSave file properties changes?"
+04117="Source file not found, can't determine maximal possible file position in respect of him size."
+04119="File size is largest than source file size."
+04121="Source file not found, can't calculate maximal possible file size regarding to file position."
+04123="File position is largest than source file size."
+
+
+; Mask
+05001="Files selection"
+05002="Files unselection"
+05005="&Mask for files selection:"
+05006="&Mask for files unselection:"
+05011="No files corresponding with entered mask found."
+05012="Selected %d files corresponding with entered mask."
+05013="Unselected %d files corresponding with entered mask."
+
+
+; Find
+06001="Find"
+06002="&Text:"
+06011="Searched items"
+06012="File &name"
+06013="File t&ype"
+06014="File &position"
+06015="File &size"
+06016="&Comment"
+06021="Preferences"
+06022="C&ase sensitive"
+06023="&Whole words only"
+06024="Ch&eck selected only"
+06031="Direction"
+06032="&Forward\n&Backward"
+
+06101="Searched text not found."
+
+
+; Confirm extraction
+07001="Confirm files extraction"
+07002="Save &directory:"
+07005="&Save directory to list"
+
+07011="Se&lect"
+07012="Select directory"
+07013="Selected directory:"
+07014="New directory"
+
+07021="Invalid save directory name."
+07022="Save directory can't be created."
+
+
+; Viewer
+08001="&File"
+08002="&Next file"
+08003="&Previous file"
+08011="&Go to actual file"
+08015="&Close"
+
+08101="&View"
+08102="&Text"
+08103="&Binary"
+08104="&Hexadecimal"
+08105="&Image / multimedia"
+08111="Show &chars 0-31"
+08112="&Fit image to window"
+08113="Image fi&ltering"
+
+
+; Rename
+09101="Rename items"
+09102="&Rename selected items to:"
+09103="New file name includes not allowed chars."
+
+
+; About
+15001="About %s"
+15002="version %s"
+15003="Registration:"
+15004="Web:"
+15005="Email:"
+15006="Physical Windows memory:"
+15007="Free physical memory:"
+15008="%s kB"
+15009="translated by Vaclav Novacek and Eva Kulichova\ncorrected by Chris Moates"
+15011="Registration &form"
+15012="&Registration"
+
+15021="Unregistered version"
+15022="Registration was completed successfully.\nThanks for your registration of %s.\n\nSave your registration text and code, you will need it to reinstall this program\nin case of a Windows reinstallation or an installation of a new version of this program."
+
+15101="Registration"
+15103="Registration &text:"
+15105="Registration &code:"
+
+15151="Registration text must have at least %d chars."
+15152="Invalid registration code."
+
+15201="Registration form"
+15202="Your &name or firm/organization name:"
+15203="&Street:"
+15204="&ZIP code:"
+15205="&City:"
+15206="Coun&try:"
+15207="&Email:"
+15209="Send &registration text and code by email"
+15211="(necessary for everyone except Czech and Slovak Republic)"
+15213="Registration type"
+15214="one &user\n&multi user"
+15215="N&ote:"
+15217="Variable s&ymbol:"
+15219="Before you send registration form, carefully read the information about registration."
+15221="Sen&d"
+
+15231="Name must have %d chars minimally."
+15233="Address isn't complete."
+15235="Invalid email address."
+15241="Confirmation before sending registration form"
+15242="Are all entries correct?"
+
+15251="Sending registration form..."
+15253="Error while sending registration form."
+15255="Registration form was sent successfully."
+
+
+; Shell Extension
+18001="Scan with Extractor..."
+18002="Scan selected object by Extractor"
+18011="Can't run Extractor.\n%s"
+18021="Can't found library %s."
+18022="Can't open library %s."
+18023="Error in library %s."
+
+
+; Failure
+20001="Program failure"
+20002="Program has crashes due to a fatal error. If program crashes many times, please contact author."
+20005="&Terminate program"

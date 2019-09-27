@@ -1,0 +1,120 @@
+# convert xma cue markers to wave cue markers
+#
+# (c) 2012-04-03 by AlphaTwentyThree of XeNTaX
+
+include "func_writename.bms"
+endian big
+idstring "cue "
+get CUESIZE long
+if CUESIZE >= 0x100000 # work-around
+   endian little
+endif
+get MARKERS long
+for i = 1 <= MARKERS
+   get MID long # marker ID
+   get MSAMP1 long # always same as MSAMP2 (?)
+   idstring "data"
+   get ZERO long
+   get ZERO long
+   get MSAMP2 long
+   putArray 0 MID MSAMP1 long
+   putArray 1 MID MSAMP2 long
+   putArray 2 MID "" string # reset
+next i
+idstring "LIST"
+get LISTSIZE long
+if LISTSIZE == 0 # lables are optional
+   callfunction wavcue 1
+   cleanexit
+endif
+idstring "adtl" # table, empty in XMA markers
+get CSIZE asize
+math CSIZE -= 1 # last byte is 0
+do
+   get IDENT long
+   if IDENT == 0x6c6162
+      savepos MYOFF
+      math MYOFF += 1
+      goto MYOFF
+   endif
+   get LSIZE long
+   get MID long
+   set MNAMEL LSIZE
+   math MNAMEL -= 4
+   getDstring MNAME MNAMEL
+   putArray 2 MID MNAME string
+   savepos TEST
+while TEST < CSIZE
+callfunction wavcue 1
+
+startfunction wavcue
+   endian little
+   putVarChr MEMORY_FILE 0 0x20657563 long # "cue "
+   set CUESIZE MARKERS
+   math CUESIZE *= 0x18
+   math CUESIZE += 4
+   putVarChr MEMORY_FILE 4 CUESIZE long
+   putVarChr MEMORY_FILE 8 MARKERS long
+   set WPOS CUESIZE
+   math WPOS += 8
+   putVarChr MEMORY_FILE WPOS 0x5453494c long # "LIST"
+   math WPOS += 4
+   set LISTSZ WPOS # position of LIST size
+   math WPOS += 4
+   putVarChr MEMORY_FILE WPOS 0x6c746461 long # "adtl"
+   math WPOS += 4
+   set LTXTPOS WPOS
+   set WPOS 0xc
+   for i = 1 <= MARKERS # "cue " section
+      putVarChr MEMORY_FILE WPOS i long # MID
+      math WPOS += 4
+      getArray MSAMP1 0 i
+      putVarChr MEMORY_FILE WPOS MSAMP1 long
+      math WPOS += 4
+      putVarChr MEMORY_FILE WPOS 0x61746164 long # "data"
+      math WPOS += 0xc
+      getArray MSAMP2 1 i
+      putVarChr MEMORY_FILE WPOS MSAMP2 long
+      math WPOS += 4
+      set NXT i
+      math NXT -= 1
+      math NXT *= 0x1c
+      math NXT += LTXTPOS
+      putVarChr MEMORY_FILE NXT 0x7478746c long # "ltxt"
+      math NXT += 4
+      putVarChr MEMORY_FILE NXT 0x14 long
+      math NXT += 4
+      putVarChr MEMORY_FILE NXT i long
+      math NXT += 8
+      putVarChr MEMORY_FILE NXT 0x206e6772 long # "rgn "
+   next i
+   set WPOS NXT
+   math WPOS += 0xc
+   for i = 1 <= MARKERS
+      getArray LABEL 2 i
+      if LABEL != ""
+         putVarChr MEMORY_FILE WPOS 0x6c62616c long # "labl"
+         math WPOS += 4
+         strlen LABSIZE LABEL
+         math LABSIZE += 5
+         putVarChr MEMORY_FILE WPOS LABSIZE long
+         math WPOS += 4
+         putVarChr MEMORY_FILE WPOS i long # MID
+         math WPOS += 4
+         set STRPOS WPOS
+         set NAME LABEL
+         callfunction writename 1
+         get WPOS asize MEMORY_FILE
+         putVarChr MEMORY_FILE WPOS 0 byte
+         math WPOS += 1
+      endif
+   next i
+   get SIZE asize MEMORY_FILE
+   set PUTLSIZE SIZE
+   math PUTLSIZE -= LISTSZ
+   math PUTLSIZE -= 4
+   putVarChr MEMORY_FILE LISTSZ PUTLSIZE long
+   get NAME basename
+   string NAME += ".wcue"
+   log NAME 0 SIZE MEMORY_FILE
+endfunction

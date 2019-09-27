@@ -1,0 +1,69 @@
+endian big
+goto 0x14
+get FORMAT short
+get ZERO byte
+get CH byte
+get FREQ long
+if FORMAT == 65534 # WAV
+   set MEMORY_FILE binary "\x52\x49\x46\x46\x44\xde\x37\x00\x57\x41\x56\x45\x66\x6d\x74\x20\x10\x00\x00\x00\x01\x00\x02\x00\x80\xbb\x00\x00\x00\xee\x02\x00\x04\x00\x10\x00"
+   get INFO long
+   if INFO == 96000 # loop markers
+      goto 0x48
+      get SMPL long
+      putVarChr MEMORY_FILE 0x24 SMPL long # append "smpl"
+      set WOFFSET 0x28 # write offset (of memory file)
+      for i = 0 < 15 # append reversed loop cues
+         get TBR long
+         reverseLong TBR
+         putVarChr MEMORY_FILE WOFFSET TBR long
+         math WOFFSET += 4
+      next i
+      set DATA 0x98
+   elif INFO == 192000 # no loop markers
+      set DATA 0x48
+   endif
+   goto DATA
+   getDstring DATA 4
+   #putVarChr MEMORY_FILE
+   set MEMORY_FILE binary "\x52\x49\x46\x46\x44\xde\x37\x00\x57\x41\x56\x45\x66\x6d\x74\x20\x10\x00\x00\x00\x01\x00\x02\x00\x80\xbb\x00\x00\x00\xee\x02\x00\x04\x00\x10\x00"
+elif FORMAT == 65535 # OGG
+   print "Wwise OGG file -> run through ww2ogg"
+elif FORMAT == 2 # Wii DSP
+   print "Wii ADPCM - to be implemented..."
+elif FORMAT == 358 # XMA
+   goto 0x4c
+   get SEEKL long
+   savepos MYOFF
+   math MYOFF += SEEKL
+   math MYOFF += 0x18 # XMAc.....JUNK
+   goto MYOFF
+   get JUNKL long
+   savepos MYOFF
+   math MYOFF += JUNKL
+   goto MYOFF
+   get DATA long
+   get XSIZE long
+   savepos OFFSET
+   endian little
+   get SIZE asize
+   math SIZE -= OFFSET
+   set RIFFSIZE SIZE
+   math RIFFSIZE += 0x34
+
+   set MEMORY_FILE binary "\x52\x49\x46\x46\xb8\x59\xa7\x00\x57\x41\x56\x45\x66\x6d\x74\x20\x20\x00\x00\x00\x65\x01\x10\x00\xd6\x10\x00\x00\x01\x00\x00\x03\xe3\x9a\x00\x00\x80\xbb\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x02\x00\x64\x61\x74\x61\x00\x58\xa7\x00"
+   putVarChr MEMORY_FILE 0x04 RIFFSIZE long
+   putVarChr MEMORY_FILE 0x24 FREQ long
+   putVarChr MEMORY_FILE 0x31 CH byte
+   putVarChr MEMORY_FILE 0x38 SIZE long
+
+   append
+   log MEMORY_FILE OFFSET SIZE
+   append
+   math SIZE += 0x3c
+   get NAME basename
+   string NAME += ".xma"
+   log NAME 0 SIZE MEMORY_FILE
+else
+   print "Format yet unsupported by script."
+   print "Please send this file to AlphaTwentyThree at Xentax!"
+endif

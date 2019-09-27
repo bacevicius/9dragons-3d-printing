@@ -1,0 +1,72 @@
+newmtl material[0]
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd C:\Users\VBace\Desktop\9Dragons 3D printing\Processed files\all_models_and_textures_no_lowres\textures\npc_resource_item01.tga
+
+newmtl material[1]
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd C:\Users\VBace\Desktop\9Dragons 3D printing\Processed files\all_models_and_textures_no_lowres\textures\npc_resource_man.tga
+
+newmtl material[2]
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd C:\Users\VBace\Desktop\9Dragons 3D printing\Processed files\all_models_and_textures_no_lowres\textures\npc_resource_man.tga
+
+newmtl material[3]
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd C:\Users\VBace\Desktop\9Dragons 3D printing\Processed files\all_models_and_textures_no_lowres\textures\npc_resource_man.tga
+
+newmtl material[4]
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd C:\Users\VBace\Desktop\9Dragons 3D printing\Processed files\all_models_and_textures_no_lowres\textures\npc_resource_man.tga
+
+newmtl material[5]
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd C:\Users\VBace\Desktop\9Dragons 3D printing\Processed files\all_models_and_textures_no_lowres\textures\npc_resource_man.tga
+
+newmtl material[6]
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd C:\Users\VBace\Desktop\9Dragons 3D printing\Processed files\all_models_and_textures_no_lowres\textures\npc_resource_man.tga
+
+newmtl material[7]
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd C:\Users\VBace\Desktop\9Dragons 3D printing\Processed files\all_models_and_textures_no_lowres\textures\npc_resource_macha_12.tga
+
+newmtl material[8]
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd C:\Users\VBace\Desktop\9Dragons 3D printing\Processed files\all_models_and_textures_no_lowres\textures\npc_resource_horse.tga
+
+newmtl material[9]
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd C:\Users\VBace\Desktop\9Dragons 3D printing\Processed files\all_models_and_textures_no_lowres\textures\npc_resource_horse.tga
+
+newmtl material[10]
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd C:\Users\VBace\Desktop\9Dragons 3D printing\Processed files\all_models_and_textures_no_lowres\textures\npc_resource_horse.tga
+
+newmtl material[11]
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd C:\Users\VBace\Desktop\9Dragons 3D printing\Processed files\all_models_and_textures_no_lowres\textures\npc_resource_horse.tga
+

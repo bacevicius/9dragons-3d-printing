@@ -1,0 +1,501 @@
+;
+;  Polish (Polski)
+;  version 2.4
+;
+;  translated by Amadeusz Konieczny 'Ak123'
+;  
+;
+
+[Language]
+
+; Locale informations
+Description="Polish"
+LocaleDescription="Polski"
+LocaleId=0415
+HelpFile="Polish.chm"
+
+
+; Generic strings
+00001="Informacja"
+00002="Uwaga"
+00003="B³¹d"
+00004="Potwierdzenie"
+
+00011="OK"
+00012="&Tak"
+00013="&Nie"
+00014="Przerwij"
+00015="&Powtórz"
+00016="&Ignoruj"
+00017="P&omoc"
+00018="T&ak na wszystkie"
+00019="N&ie na wszystkie"
+
+00101="B"
+00102="kB"
+00103="MB"
+00111="%"
+
+00201="Wszystkie pliki (*.*)|*.*"
+
+00301="Wsparcie dla pomocy HTML nie zainstalowane."
+00302="Plik pomocy nie dostêpny."
+
+00401="Wtyczka %s nie jest kompatybilna z t¹ wersj¹ programu.\nWersja programu API: %s\nWersja wtyczki API: %s"
+
+
+; Main window
+01001="P&liki do skanowania:"
+01002="Te pliki bêd¹ poszukiwane dla wybranych typów plików"
+01003="&Wybierz"
+01004="Wybierz pliki"
+01005="Rezultat skanowania (*.esr;*.csv;*.apl)|*.esr;*.csv;*.apl"
+01006="&Dodaj pliki do listy"
+
+01011="&Zapisz wydobyte pliki do:"
+01012="Extracted files will be saved to this directory"
+01013="Wybierz katalog dla tymczasowych plików (TEMP)"
+01014="W&ybierz"
+01015="Wybierz katalog"
+01016="Wybrany katalog:"
+01017="Nowy katalog"
+
+01021="Formaty"
+01022="Grupa plików"
+01023="Wybrane f&ormaty: %d/%d"
+01024="Wybrane &grupy plików: %d/%d"
+01025="Typ"
+01026="Opis"
+01027="&Inv"
+01031="£aduj"
+01032="£aduj wybrane formaty"
+01033="&Dodaj wybrane formaty"
+01034="£aduj wybrane grupy plików"
+01035="&Dodaj wybrane grupy plików"
+01036="Zapisz"
+01037="Zapisz wybrane formaty"
+01038="Zapisz wybrane grupy plików"
+01041="Formaty (*.fmt)|*.fmt"
+01042="Grupy plików (*.gfl)|*.gfl"
+01045="O programie"
+01046="Konfiguracja"
+
+01051="Opcje"
+
+01061="%s"
+01062="&Jêzyk:"
+01063="Zmieñ jêzyk u¿ytkownika"
+01064="Dodaj pozycjê &Menu Start"
+01065="Dodaj &ikonê Pulpitu"
+01066="Dodaj ikonê &QuickLaunch"
+01068="Proxy s&erver ("Host:Port"):"
+01069="Proxy server dla po³¹czenia z Internetem. Pozostaw puste dla braku proxy server."
+01071="SprawdŸ &nowe wersje"
+01072="Osi¹galnoœæ nowych wersji %s zostanie wykryta po nawi¹zaniu po³¹czenia z Internetem"
+01073="Inte&gruj z systemem"
+01074="Integruj program z systemem i w³¹cz pozycje menu kontekstowego"
+
+01081="Nazwy"
+01082="Format &nazwy plików:"
+01083="Nazwy znalezionych plików bêd¹ komponowane w zgodzie z t¹ definicj¹. Nazwa pliku\symbol znaku %f%, symbol numeru %n%. Ta definicja mo¿e byæ definiowana."
+01084="U¿yj pliku Ÿród³owego jako &podstawê nazwy pliku"
+01085="Nazwy znalezionych plików zostan¹ stworzone z nazw plików znalezionych"
+01086="&Lokalne numerowanie"
+01087="Nazwy znalezionych plików bêd¹ numerowane osobno dla ka¿dego pliku Ÿród³owego"
+01088="brak numerowania jeœli &¿aden plik nie jest znaleziony"
+01089="Jeœli ¿aden plik nie zosta³ znaleziony w pliku Ÿród³owym, wtedy nazwa w³asna nie zawiera numeru"
+01090="System numerowania nazw plików"
+01091="decy&malne\n&hexadecymalne"
+01092="Nazwy znalezionych plików bêd¹ oznaczone z numerem wybranym w systemie numeru (niewa¿ne dla grupy plików)"
+01093="Konwertuj &podkreœlenia na spacje"
+01094="Konwertuj wszystkie podkreœlenia w nazwach pliów na spacje (niewa¿ne dla grupy plików i rezultatu skanowania)"
+01097="&Wybór Stacji CD-R"
+01098="Dla zachowania rezultatu skanowania bêd¹ u¿yte ró¿ne Stacje CD-R"
+01099="&Stacja CD-R:"
+01100="Podczas ³adowania rezultaty skanowania bêd¹ u¿yte jako wybrana Stacja CD-R"
+01101="Automatycznie"
+
+01121="Pozycja"
+01122="&Pozycja pocz¹tkowa skanowania:"
+01123="Wybrane pliki bêd¹ skanowane z tej pozycji z nastêpuj¹c¹ definicj¹ (pocz¹tek pliku=0)" 
+01124="pocz¹tkowa pozycja jednostki skanowania"
+01125="Zezwolone dla"
+01126="wszystkie p&liki\npierws&zy plik"
+01127="Ustaw prawdziwoœæ pocz¹tkowej pozycji skanowania"
+
+01131="Przegl¹darka"
+01132="Domyœlny typ podgl¹du"
+01133="A&uto\n&Tekst\n&Binarny\n&Hex"
+01134="Ustaw domyœln¹ formê pliku podgl¹du"
+01135="Poka¿ obrazki jako &grafikê"
+01136="Obrazki bêd¹ pokazane jako grafika"
+01137="Graj &pliki multimedialne"
+01138="Pliki multimedia bêd¹ odtwarzane jako dŸwiêk i obraz"
+01139="U¿yj IrfanVie&w lub XnView"
+01140="U¿yj zewnêtrznego programu"
+01141="Pl&ik:"
+01142="Nazwa pliku lub zewnêtrzny program"
+01143="Wybie&rz"
+01144="Wybierz plik"
+01145="IrfanView (i_view32.exe)|i_view32.exe|XnView (xnview.exe)|xnview.exe"
+
+01151="Bufor"
+01152="Ro&zmiar:"
+01153="Zmiana bufora dla skanowanych plików"
+01154="Rozmiar bufora dla skanowania (zalecane %d kB)"
+01156="A&utomatyczny rozmiar"
+01157="Wielkoœæ bufora bêdzie wybrana automatycznie. Program zawiera dynamiczny bufor\noptymalizacjê. Ta optymalizacja mo¿e zrobiæ skanowanie szybciej."
+01158="Skasuj &tymczasowe pliki:"
+01159="Warunek kompletu dla usuwania plików tymczasowych"
+01160="nigdy\npo zamkniêciu okna skanowania\nprzy zakoñczeniu programu\nze startem programu"
+01161="U¿yj &istniej¹cych plików"
+01162="Podczas otwierania plików albo ogl¹dania bêdzie u¿yte te same istniej¹ce pliki"
+
+01171="Wyœwietlanie"
+01172="Wyœwietl status w procentach"
+01173="procentowy status sknowania bêdzie wyœwietlony przez wskazówkê postêpu"
+01174="Poka¿ &ikony plików"
+01175="Poka¿ ikony znalezionych typów plików"
+01176="Kolorowe pozycje &t³a"
+01177="Pozycje t³a bêd¹ kolorowane wed³ug operacji (otwieranie, ekstrakcja)"
+01178="&Automatyczna szerokoœæ kolumn"
+01179="Szerokoœæ nazw kolumn znalezionych plików bêdzie wybrana automatycznie wed³ug d³ugoœci nazwy pliku"
+01180="Poka¿ &okno przez szybki start"
+01181="To znaczy, ¿e jeœli okno g³ówne powinno byæ wyœwietlane przy starcie programu z parametrem,\nktóry wskazuje nazwê skanowania pliku albo operacje myszy przeci¹gnij & upuœæ."
+
+01191="Ustawienia"
+01192="Szybkie ska&nowanie"
+01193="Podczas szybkiego skanowania nastêpny plik jest skanowany za koñcem pierwszego znalezionego pliku"
+01194="&Przestrzeñ:"
+01195="To znaczy, ile bajtów cofa w pocz¹tku pliku Ÿród³owego przed dalszym skanowaniem (zalecane %d B)"
+01196="PotwierdŸ eks&trakcjê"
+01197="Potwierdzenie dla katalogu bêdzie pokazane przed ekstrakcj¹"
+01198="Potwierdzaj z&aprzestanie skanowania"
+01199="Wyœwietl potwierdzienie zaprzestania skanowania"
+01202="I&gnoruj b³êdy odczytu"
+01203="Ignoruj mo¿liwy b³¹d i kontynuuj skanowanie"
+01204="Priorytet pro&cesu:"
+01205="Dostosuj klasê pierwszeñstwa do skanowania procesu"
+01206="Niski,Normalny,Wysoki,Czas rzeczywisty"
+
+01301="&Start"
+01302="&Zakoñcz"
+01303="&Pomoc"
+01304="&O programie"
+
+01401="£aduj rezultaty skanowania"
+01411="Nieznany"
+01412="Rezultat skanowania %s"
+
+01511="Definicje nazw plików musz¹ zawieraæ symbole %s i %s."
+01512="Nieprawid³owa pozycja startowa skanowania."
+01513="Nieprawid³owy rozmiar przestrzeni pliku skanowania.\nValue must be in %d-%d."
+01514="katalog nagrywania nie mo¿e byæ stworzony. Kontynuowaæ?"
+01521="B³¹d podczas nagrywania listy wybranych formatów."
+01522="B³¹d podczas nagrywania listy wybranych grup plików."
+01541="Dany plik nie istnieje albo nie mo¿e zostaæ zeskanowany.\nKontynuowaæ skanowanie kolejnego pliku?"
+
+01601="Nowa wersja %s"
+01602="W Internecie znaleziono now¹ (%s) of %s.\nDostajesz nowe funkcje i inne poprawki programu kiedy pobierasz now¹ wersjê."
+01603="&Pobierz now¹ wersjê"
+01604="&Kontynuuj"
+
+
+; Okno skanowania
+02001="Skanowanie"
+02002="Plik:"
+02003="Typ:"
+02004="Znalezione &pliki:"
+02011="Zrobione"
+02012="Zaniechane"
+02013="B³¹d"
+02021="Nazwa"
+02022="Typ"
+02023="Pozycja"
+02024="Rozmiar"
+02025="Komentarz"
+
+02101="¯aden plik nie ustawiony.\nCzy chcesz wybraæ plik."
+02102="¯aden plik nie wybrany.\nCzy chcesz wybraæ plik. Obszar wyboru przez przeci¹gniêsie myszk¹,\nwybór pojedynczego pliku - trzymaj klawisz Ctrl i lewy przycisk myszki."
+02103="¯aden plik nie zaznaczony.\nZaznaczanie przez trzymanie + - i przycisku Inv."
+
+02201="&ZnajdŸ"
+02203="ZnajdŸ &nastêpny"
+02205="&Poka¿"
+02207="&Format czasu"
+02209="&Importuj plik"
+02211="Utwórz &grupê plików"
+02213="&Dodaj obiekt"
+02214="Dodaj p&liki..."
+02215="&Kasuj obiekty"
+02216="Zmi&eñ nazwê"
+02217="Styl obiektów &wyœwietlania"
+02218="&Szczegó³y"
+02219="&Lista"
+02221="S&ortuj obiekty"
+02222="&Nazwa"
+02223="&Typ"
+02224="&Pozycja"
+02225="&Rozmiar"
+02226="&Komentarz"
+02228="&W górê"
+02229="W &dó³"
+02231="&Raportuj"
+02233="Zachowaj &resultat skanowania"
+
+02251="&Otwórz"
+02252="&Poka¿"
+02253="&W³aœciwoœci"
+02254="&Ekstrakcja"
+
+02271="PotwierdŸ kasowanie"
+02272="Skasowaæ %d wybrane pliki?"
+02273="Skasowaæ wybrane pliki %s?
+
+02311="&Inv"
+02312="Fu&nkcje"
+02324="Zatrzymaj"
+02325="Zamknij"
+
+02401="Otwórz plik..."
+02402="Ekstrakcja pliku..."
+02403="Utwórz grupê plików..."
+02404="Importuj plik..."
+02405="Szukanie..."
+02406="Zachowanie rezulatu szukania..."
+02407="£¹czenie plików..."
+
+02421="Import pliku"
+02422="Dodaj pliki"
+02423="Utwórz grupê plików"
+02424="Po³¹cz pliki"
+02425="Zachowaj rezultat skanowania"
+02426="Rezultaty skanowania (*.esr)|*.esr|Rezultaty skanowania w formacie CSV (*.csv)|*.csv|ANX Playlista (*.apl)|*.apl"
+02427="Zachowaj pliki zaznaczone i &wybrane"
+02431="Jako &link tylko do wybranego pliku"
+
+02501="To jest wersja shareware z limitem szukania do %d plików.\nProsze zarejetruj.\nInformace na temat rejestracji znajdziesz w pliku pomocy."
+
+02511="Pliki Ÿród³owe s¹ w formacie grupy plików %s, co nie jest dozwolone.\nJeœli chcesz szybkiego skanowania i uzyskaæ w³aœciwe nazwy, pozwól na to liœcie grupy plików."
+02512="B³¹d podczas odczytu grupy plików."
+02515="B³¹d podczas tworzenia grupy plików."
+02516="Nazwa pliku %s jest d³u¿sza ni¿ zezwala na to format. Nazwa bêdzie obciêta do maksymalnej mo¿liwej."
+02517="Plik docelowy ju¿ istnieje.\nKontynuowaæ zapisywanie pliku na koñcu pliku docelowego?\nJeœli wybierzesz Nie, plik bêdzie nadpisany."
+
+02521="B³¹d podczas opening scanned file."
+02522="B³¹d podczas reading beginning of scanning file. Can't diagnose, whether is a groupfile."
+02523="B³¹d podczas reading scanned file."
+02524="Plik %s nie znaleziony."
+
+02531="PotwierdŸ nadpisywanie pliku"
+02532="Plik %s ju¿ istnieje.\nCzy chcesz go nadpisaæ?"
+02533="B³¹d podczas odczytu pliku Ÿród³owego."
+02534="B³¹d podczas zapisu pliku ekstrakcji."
+
+02541="Brak pliku Ÿród³owego."
+02543="Brak pliku Ÿród³owego, nie mogê dokonaæ ekstrakcji pliku."
+02544="Brak pliku Ÿród³owego, nie mogê pokazaæ pliku."
+02545="Brak pliku Ÿród³owego, nie mogê otworzyæ pliku."
+02546="Kontynuowaæ z nastêpnym plikiem?"
+02547="B³¹d (%d) podczas otwarcia pliku."
+02548="B³¹d podczas otwierania pliku."
+
+02551="B³¹d podczas tworzenia pliku docelowego."
+02552="B³¹d podczas odczytu pliku Ÿród³owego."
+02553="B³¹d podczas zapisu pliku docelowego."
+
+02561="B³¹d podczas tworzenia rezultatu skanowania."
+02562="B³¹d podczas zapisu rezultatu skanowania."
+02563="B³¹d podczas odczytu rezultatu skanowania."
+02564="Plik zawiera rezultat skanowania z nowszej wersji programu, format pliku nie jest kombatybilny z t¹ wersj¹. Jeœli komuniakt pojawia sie podczas otwierania rezultatu skanowania, u¿yj nowszej wersji programu."
+
+02571="B³¹d podczas odczytu importowanego pliku."
+02572="B³¹d podczas zapisu importowanego pliku."
+02575="Ta funkcja zmienia zawartoœæ pliku Ÿród³owego.\nPrzed rozpoczêciem importu utwórz kopie zapasow¹ pliku Ÿród³owego.\nKontynuowaæ import pliku?"
+02576="Importowany plik jest o %s B wiêkszy ni¿ oryginalny plik.\nImportowaæ do rozmiaru oryginalnego pliku?\nJeœli wybierzesz Nie, plik bêdzie importowany ca³y i dane za plikiem bêd¹ nadpisane."
+02577="Importowany plik jest o %s B mniejszy ni¿ oryginalny plik.\nZachowaæ czêœæ pliku bez zmian?\nJeœli wybierzesz Nie, pozosta³a czêœæ pliku bêdzie wyzerowana."
+
+02581="Format %s jest przyporz¹dkowany do nieistniej¹cego programu."
+02582="Format %s nie jest przyporz¹dkowany do ¿adnego programu."
+
+02591="Przerwaæ skanowanie?" 
+
+
+; Raport
+03001="Raport"
+03002="Informacje o plikach"
+03003="Plik Ÿród³owy, do którego nie zosta³ znaleziony ¿aden plik:"
+03011="Informacje o formatach"
+03012="Rachunek fa³szywych alarmów:"
+03013="Uwaga: Skanowanie mo¿na przyspieszyæ przez wy³¹czenie formatów\nposzukiwanie z rachunkiem fa³szywych alarmów."
+03021="B³êdy"
+03022="Liczba b³êdow podczas skanowania pliku:"
+03031="Czas"
+03032="Ca³kowity czas skanowania:"
+03033="Najd³u¿szy czas dla formatu:"
+03034="Rozpoczêcie skanowania:"
+03035="Zakoñczenie skanowania: "
+03036="Czas skanowania: " 
+03101="&Zapisz do pliku..."
+03102="Zapisz raport"
+03103="Plik tekstowy (*.txt)|*.txt"
+
+
+; File properties
+04001="%s - w³aœciwoœci"
+04002="&plik Ÿród³owy:"
+04004="Wybi&erz"
+04006="Wybierz plik Ÿród³owy"
+04015="&Nazwa pliku:"
+04021="&Typ:"
+04025="Zwi¹zek &opisu:"
+04031="&Zwi¹zek:"
+04035="&Pozycja w pliku Ÿród³owym:"
+04037="&Max."
+04038="Maksymalna pozycja pod wzglêdem wielkoœci pliku w pliku Ÿród³owym"
+04041="Rozm&iar pliku:"
+04043="Ma&ksymalnie."
+04044="Maksymalna wielkoœæ pod wzglêdem pozycji pliku w pliku Ÿród³owym"
+04045="&Komentarz:"
+04051="Ro&zmiar %d wybranych plików:"
+
+04101="Nieprawid³owa nazwa pliku Ÿród³owego."
+04103="Nieprawid³owa nazwa pliku."
+04107="Nieprawid³owa pozycja pliku."
+04109="Nieprawid³owy rozmiar pliku."
+04111="Pozycja pliku bêdzie za plikiem Ÿród³owym.\nUstawiæ pozycjê pliku do maksymalnie mo¿liwej wed³ug rozmiaru pliku?"
+04113="Rozmiar pliku jest zbyt du¿y. Czêœæ pliku bêdzie za plikiem Ÿród³owym.\nZaszeregowaæ wielkoœæ pliku na granicy koñca pliku Ÿród³owego?"
+04115="Plik Ÿród³owy nie znaleziony, nie mogê zweryfikowaæ wpisów.\nZachowaæ zmiany w³aœciwoœci pliku?"
+04117="Plik Ÿród³owy nie znaleziony, nie mogê okreœliæ mo¿liwie najwiêkszej pozycji pliku dotycz¹cego jego rozmiaru."
+04119="Rozmiar pliku jest wiêkszy ni¿ rozmiar pliku Ÿród³owego."
+04121="Plik Ÿród³owy nie znaleziony, nie mogê obliczyæ mo¿liwie najwiêkszego rozmiaru pliku dotycz¹cego pozycji pliku."
+04123="Pozycja pliku jest wiêksza ni¿ rozmiar pliku Ÿród³owego."
+
+
+; Mask
+05001="Wybór plików"
+05002="Pliki niewybrane"
+05005="&Maska dla selekcji plików:"
+05006="&Maska dla niewybranych plików :"
+05011="¯adne pliki koresponduj¹ ze znalezion¹ mask¹."
+05012="Wybrane %d plików korenspoduje ze znalezion¹ mask¹."
+05013="Niewybrane %d korenspoduje z wprowadzon¹ mask¹."
+
+
+; Find
+06001="ZnajdŸ"
+06002="&Tekst:"
+06011="Poszukiwane obiekty"
+06012="&Nazwa pliku"
+06013="T&yp pliku"
+06014="&Pozycja pliku"
+06015="&Rozmiar pliku"
+06016="&Komentarz"
+06021="Ustawienia"
+06022="Przyp&adki szczególne"
+06023="&Tylko ca³e s³owa"
+06024="SprwadŸ wybran&e tylko"
+06031="Kierunek"
+06032="&Przód\n&Ty³"
+
+06101="Nie znaleziono tekstu."
+
+
+; Confirm extraction
+07001="PotwierdŸ ekstrakcjê plików"
+07002="Zachowaj &katalog:"
+07005="&Zachowaj katalog do listy"
+
+07011="Wybi&erz
+07012="Wybierz katalog"
+07013="Wybrany katalog:"
+07014="Nowy katalog"
+
+07021="Nieprawid³owa zachowana nazwa katalogu."
+07022="Zachowany katalog nie mo¿e byæ utworzony."
+
+
+; Viewer
+08001="&Plik"
+08002="&Nastêpny plik"
+08003="&Poprzedni plik"
+08011="&IdŸ do aktualnego pliku"
+08015="&Zamknij"
+
+08101="&Wyœwietl"
+08102="&Tekst"
+08103="&Binarny"
+08104="&Hexadecimalny"
+08105="&Obraz / multimedia"
+08111="Poka¿ &znaki 0-31"
+08112="&Dopasuj obraz do okna"
+08113="Fi&ltruj obraz"
+
+
+; Rename
+09101="Zmieñ nazwê obiektu"
+09102="&Zmieñ wybrany obiekt na:"
+09103="Nowa nazwa pliku zawiera niedozwolone znaki."
+
+
+; About
+15001="O programie %s"
+15002="Wersja %s"
+15003="Rejestracja:"
+15004="WWW:"
+15005="Email:"
+15006="Pamiêæ fizyczna Windowsa:"
+15007="Wolna pamiêæ fizyczna:"
+15008="%s kB"
+15009="T³umaczenie polskie: Amadeusz Konieczny\n'Ak123'"
+15011="&Formularz rejestracyjny"
+15012="&Rejestracja"
+
+15021="Niezarejestrowana wersja"
+15022="Rejestracja powiod³a siê.\nDziêkujemy za rejestracjê %s.\n\nZapisz swój tekst i kod rejestracyjny, przeinstaluj program\ngdy przeinstalowa³eœ Windowsa albo zainstalowa³eœ now¹ wersje programu."
+
+15101="Rejestracja"
+15103="&Tekst rejestracyjny:"
+15105="&Kod rejestracyjny:"
+
+15151="Tekst rejestracyjny musi mieæ przynajmniej %d znaków."
+15152="Nieprawid³owy kod rejestracyjny."
+
+15201="Formularz rejestracyjny"
+15202="Twoje imie albo &nazwa firmy/organizacji:"
+15203="&Ulica:"
+15204="&Kod pocztowy:"
+15205="&Miasto:"
+15206="Kra&j:"
+15207="&Email:"
+15213="Typ rejestracji"
+15214="jeden &u¿ytkownik\n&mwielu u¿ytkowników"
+15215="U&waga:"
+15217="Zmienny s&ymbol:"
+15219="Zanim wyœlesz formularz rejestracyjny, dok³adnie przeczytaj informacje o rejestracji."
+15221="Wyœl&ij"
+
+15231="Nazwa musi mieæ minimum %d znaków."
+15233="Adres nie jest kompletny."
+15235="Nieprawid³owy adres email."
+15241="Potwierdzenie przed wysy³aniem formularza rejestracyjnego"
+15242="Czy wszystkie wpisy s¹ prawid³owe?"
+
+15251="Przesy³am formularz rejestracyjny..."
+15253="B³¹d w przesy³aniu formularza rejestracyjnego."
+15255="Formularz rejestracyjny przes³any."
+
+
+; Shell Extension
+18001="Skanuj Extractorem..."
+18002="Skanuj wybrane obiekty Extractorem"
+18011="Nie mogê uruchomiæ Extractora.\n%s"
+18021="Nie mogê znaleŸæ biblioteki %s."
+18022="Nie mogê otworzyæ biblioteki %s."
+18023="B³¹d w bibliotece %s."
+
+
+; Failure
+20001="B³¹d programu"
+20002="Zawiesi³ siê z powodu  krytycznego b³êdu. Jeœli to sie bêdzie powtarzaæ, skontaktuj siê z autorem."
+20005="&Przerwanie programu"

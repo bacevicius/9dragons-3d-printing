@@ -1,0 +1,97 @@
+# RIFF_to_uxma.bms
+# transforms xma streams with RIFF or RIFX header to headerless XMA streams (*.uxma)
+# output files have the format "<name>@FREQ[m/s].uxma"
+# resulting files can be parsed if necessary
+# a valid XMA header can be added with my header_adder_XMA.bms
+#
+# cue markers are saved as <name>.cue
+# they can be applied to the decoded wave files with my wave cue adder
+#
+#
+# (c) 2012-04-07 by AlphaTwentyThree of XeNTaX
+
+getDstring IDENT 4
+if IDENT == "RIFF"
+elif IDENT == "RIFX"
+   endian big
+else
+   print "ERROR: No RIFF or RIFX header found!"
+   cleanexit
+endif
+callfunction process 1
+
+get NAME basename
+string NAME += "@"
+string NAME += FREQ
+if CH == 1
+   string NAME += "m"
+elif CH == 2
+   string NAME += "s"
+endif
+string NAME += ".uxma"
+do
+   findLoc OFFSET string "data" 0 ""
+   goto OFFSET
+   idstring "data"
+   get SIZE long
+while SIZE == 0 # skip marker section to find stream size
+math OFFSET += 0x8
+log NAME OFFSET SIZE
+
+goto 0
+findLoc MARKERS string "cue " 0 ""
+if MARKERS != ""
+   if MARKERS < OFFSET # in header
+      goto MARKERS
+      idstring "cue "
+      get SIZE long
+      math SIZE += 8
+      append
+      log MEMORY_FILE MARKERS SIZE
+      append
+      math MARKERS += SIZE
+      goto MARKERS
+      getDstring IDENT 4
+      if IDENT == "LIST"
+         get SIZE long
+         math SIZE += 8
+         append
+         log MEMORY_FILE MARKERS SIZE
+         append
+      endif
+      get SIZE asize MEMORY_FILE
+      get NAME basename
+      string NAME += ".cue"
+      log NAME 0 SIZE MEMORY_FILE
+   endif
+endif
+
+startfunction process
+   goto 0x14
+   get CODE short
+   if CODE == 0x165
+      goto 0x24
+      get FREQ long
+      goto 0x31
+      get CH byte
+   elif CODE == 0x166
+      get CH short
+      get FREQ long
+   elif CODE == 0x104
+      endian big
+      goto 0x20
+      get FREQ long
+      goto 0x3c
+      get CH byte
+   elif CODE == 0x401
+      endian big
+      goto 0x20
+      get FREQ long
+      goto 0x3c
+      get CH byte
+   else
+      print "No XMA file. Aborting..."
+      cleanexit
+   endif
+   
+endfunction

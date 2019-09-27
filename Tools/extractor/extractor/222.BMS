@@ -1,0 +1,115 @@
+set TESTMODE 0
+set TESTXMA1 0
+set TEST_ADVANCED_BLOCKSIZES 0
+set WRITE_UNPARSED 0
+set FREQ_DEFAULT 48000 # for files without given freq info
+set ENABLE_SCAN 0
+
+set COMMENTS 0
+set BLOCKSIZE 0x10000
+set XMAVERSION 2
+set PARSE 1
+
+# XMA_transform (rev 2012-10-27)
+# ==============================
+# (c) by AlphaTwentyThree of XeNTaX
+#
+# Usage: tansform various XMA source formats to XMA files that are decodable by toWAV
+# xma_parse.exe needs to be located either in the directory of this script or included in whe Windows PATH variable
+#
+#
+# supported XMA types:
+# - wave header (RIFF/RIFX), big-endian & little-endian with any number of channels, wrong stream size automatically corrected
+# - wave header with additional "xma." at the start (e.g. Fable II)
+# - *.SoundNodeWave files from the UT3 engine (two types)
+# - *.psb files from several XBLA games *needs some correction*
+# - xma files with magic sign \x0\x0\x0\x0\x0\x0\x2\x0 (Are You Smarter Than A 5th Grader? series)
+# - *.res files from Electronic Arts fbrb archives with possibly deflated XMA stream (e.g. Battlefield series)
+# - xma files with "XWV " identifier (e.g. Bloody Good Time XBLA)
+# - Microsoft XNA framework *.xnb files (e.g. Boulder Dash XL XBLA)
+# - headerless XMA stream
+# - header-reversed RIFF (e.g. Resident Evil 6)
+# - FUNl header XMA2 (e.g. Men in Black: Alien Crisis)
+# - Electronic Arts MUSX header (e.g. 007: Legends)
+# - Quake 4 variant (XMA1)
+#
+# to do (not sorted by proprity):
+# - introduce the "-x" parameter of xma_parse (maye keeping the header, adjusting the channels)
+#   has to be implemented for the scanning function later on (first run: plain-extract with -x & save offset/size second run: parse with -r)
+# - try to determine working frequency (will need toWAV execution call)
+# - transform SoundNodeWave markers to standard cue markers
+# - add support for the Ubisoft XMA variant (includes multilayered files, Forge engine included)
+# - for certain variants: disable TESTMODE and set specs automatically
+# - auto-detection for SoundNodeWave and EA XMA (no file extension needed)
+#
+#
+# Contents:
+# ==================
+# 1. Set user variables
+# 2. Get/set some standards
+# 3. identify XMA file type and link to according process lists
+# 4. process different file types
+#    4.1 RIFF/RIFX header                                  ~ processRIFF
+#      4.1a get stream start and stream size from "data" section    ~ getDatastartRIFF
+#      4.1b. RIFF header with codec ascii sign at offset INFO       ~ getSpecsRIFF
+#      4.1c Extract RIFF cue markers                         ~ getCueRIFF
+#   4.2 UT3 Engine *.SoundNodeWave (two types)                  ~ processSNW
+#      4.2a Get INFO variable for RIFF header or determine variant   ~ getInfoSNW
+#      4.2b Get specs from variant type                     ~ SNWVariant
+#      4.2c Write SNW header to disk                        ~ getCueSNW
+#      4.3 PSB header (various XBLA games)                     ~ processPSB
+#      4.4 Variant from Are You Smarter Than A 5th Grader? (XBLA)   ~ process5thGraderXMA
+#      4.5 Electronic Arts XMA variant (e.g. Battlefield series)   ~ processEAXMA
+#         4.5a Inflate EA XMA                              ~ parse_ea_xma
+#      4.6 XWV header variant (e.g. Bloody Good Time XBLA)         ~ processXWV
+#       4.7 Microsoft XNA Framework *.xnb                     ~ processXNB
+#      4.8 FFIR header (RE6)                              ~ processFFIR
+#      4.9 FUNl header (e.g. Men in Black: Aien Crisis)         ~ processFUNl
+#      4.10 MUSX header (e.g. 007 Legends)                     ~ processMUSX
+#      4.11 Quake 4 variant                              ~ processQ4
+#      4.100 others                                    ~ processScan
+#      4.Xa determmine XMA stream start                     ~ getXMAstart
+#      4.Xb determine chanel count                           ~ getXMACH   
+# 5. Standard functions
+#   5.1 Use OFFSET and SIZE to write the raw data to memory         ~ write_raw_to_mem
+#   5.2 Process the raw data from MEMORY_FILE                  ~ process_raw_data
+#   5.3 Add header to MEMORY_FILE (raw data) and write to disk      ~ write_raw_xma
+#   5.4 Parse call (from MEMORY_FILE to MEMORY_FILE2)            ~ parse
+#   5.5 Add header in MEMORY_FILE3 and write to disk as NAME      ~ XMA
+
+
+
+# ==================================================================================================================\\
+# 1. Set user variables                                                                        ||
+# ---------------------                                                                        ||
+#                                                                                       ||
+#      TESTMODE                                                                           ||
+#      Toggles between a test run (to be applied on one file only) and the final run (with user-defined settings)   ||
+#      The test run writes the following data to disk (each file is named accordingly):                     ||
+#      - unparsed (only adjusted header) - one file                                                ||
+#      - parsed: five different block sizes, XMA1 and XMA2 - 10 files                                    ||
+#      - headerless unparsed raw data (for manual testing with xma_parse)                                 ||
+#      Note: if the file is multichannel, only the first channel pair is tested.                           ||
+#                                                                                       ||
+#      TESTXMA1               - (de-)activates testing for XMA1 in TESTMODE                           ||
+#                                                                                       ||
+#      TEST_ADVANCED_BLOCKSIZES   - 0 only tests for 0x8000 and 0x10000 (most common)                        ||
+#                             1 additionally tests for 0x2000, 0x4000 and 0x3000 (only rare cases)         ||
+#                                                                                       ||
+#      COMMENTS               - set to 1 to print information what the script is currently doing            ||
+#                             (for debugging)                                                ||
+#                                                                                       ||
+#      FREQ_DEFAULT            - take this frequency if none is found/given                           ||
+#                             (might need adjusting if the resulting files from TESTMODE are undecodable   ||
+#                                                                                       ||
+#      ENABLE_SCAN               - 0/1 toggles a raw scan if no known type is found                        ||
+#                             use with care, this is still experimental                              ||
+#                                                                                       ||
+#       user-defined settings (if TESTMODE is activated, these ignored):                                  ||
+#      BLOCKSIZE      - corresponds to the xma_parse -b option                                       ||
+#      XMAVERSION      - 2 or 1 possible (corresponds to the xma_parse -1/2 option)                        ||
+#      PARSE         - decide whether to parse or just manipulate the header to standard                     ||
+#                    note:   PARSE 0, CH > 2 => TESTMODE activated!                                    ||
+#                        that means you should sheck your settings and parse all input files               ||
+#                                                                                       ||
+# ==================================================================================================================//
